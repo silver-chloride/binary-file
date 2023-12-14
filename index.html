@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>교훈</title>
+</head>
+<body>
+    <header>
+        <div class="select-num">
+            <div class="text">글자</div>
+            <input type="text" class="text" placeholder="45" onchange="pt=this.value; draw();">
+            <div class="text">pt</div>
+        </div>
+        <div class="select-num">
+            <div class="text">가로</div>
+            <input type="text" class="text" placeholder="600" onchange="reDraw(Number(this.value));">
+            <div class="text">px</div>
+        </div>
+        <div class="select-num">
+            <div class="text">세로</div>
+            <input type="text" class="text" placeholder="450" onchange="reDraw1(Number(this.value));">
+            <div class="text">px</div>
+        </div>
+        <select class="save-load-button" onchange="chageSelect(this.value);">
+            <option disabled selected>저장</option>
+            <option value="ghn 파일">ghn 파일</option>
+            <option value="png 파일">png 파일</option>
+        </select>
+        <a id="link" href="#"></a>
+
+        <label for="fileinput" class="save-load-button">불러오기</label>
+    </header>
+
+    <canvas></canvas>
+
+    <a href="" id="png"></a>
+
+    <div class="textinput">
+        <div>교훈을 입력 하세요 : </div>
+        <input id="textinput" onchange="getText()" oninput="reDraw2(this.value)">
+    </div>
+    
+    <input type="file" onchange="readFile(this)" id="fileinput" style="display: none;">
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
